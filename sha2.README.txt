@@ -1,0 +1,42 @@
+---------------------------------------------------------------------------
+  Note: Some of the downloads on this site have published SHA-2 values.
+  To allow verification of the integrity of these values, even in a
+  worst-case scenario (for example, if the download site were fully
+  compromised), they have been cryptographically signed off-site using a
+  private key that is not stored on this server. A copy of the
+  corresponding public key is available on an independent website.
+---------------------------------------------------------------------------
+
+How to show your download's SHA-2:
+  openssl dgst -sha256 zoc9999*
+
+Reference SHA-2 values:
+  https://www.emtec.com/downloads/zoc/zoc9999.sha2
+
+Signature for integrity checking of the SHA-2 values:
+  https://www.emtec.com/downloads/zoc/zoc9999.sha2.sig
+
+The signature can be verified using the following public-key:
+  https://www.emtec.com/.well-known/sha2-public-key.pem
+
+Off-site copy of the same public-key:
+  https://raw.githubusercontent.com/zocterminal/.well-known/d7ffe91866e35744dc08f0e71a3a563b865f1244/sha2-public-key.pem
+
+Procedure to verify the integrity of the list of SHA-2 values:
+  echo geting sha2-list, signature and public key
+  wget https://www.emtec.com/downloads/zoc/zoc9999.sha2
+  wget https://www.emtec.com/downloads/zoc/zoc9999.sha2.sig
+  wget https://raw.githubusercontent.com/zocterminal/.well-known/d7ffe91866e35744dc08f0e71a3a563b865f1244/sha2-public-key.pem
+  echo verifying sha2-list
+  openssl base64 -d -in zoc9999.sha2.sig -out zoc9999.sha2.bsig
+  openssl dgst -sha256 -verify sha2-public-key.pem -signature zoc9999.sha2.bsig zoc9999.sha2
+
+  See also: https://www.emtec.com/downloads/zoc/zoc9999.sha2.verify.sh
+
+Verify Code-Signing Certificate:
+  MacOS: codesign -dvv zoc9999.dmg
+  Windows PowerShell: Get-AuthenticodeSignature zoc9999_x64.exe | Format-List Signer*,Status*
+
+Alternate commands for Windows PowerShell:
+  openssl dgst -sha256 --> Get-FileHash -Algorithm SHA256 <filename>
+  wget                 --> Invoke-WebRequest <url> -OutFile <filename>
