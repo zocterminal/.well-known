@@ -1,56 +1,38 @@
-# ZOC SHA-2 VALUES
+# VERIFYING A ZOC TERMINAL VERSION
 
-This archive contains SHA-2 checksums and public-keys for emtec.com and ZOC Terminal.
+If an update-download in ZOC failed any you got redirected to here, please 
+understand that while the reason is most likely benign (like someone 
+accidentally deleted a file that is related to the verification process), 
+but the instructions here will scale up to the most catastrophic error (e.g.,
+a complete take-over of our website).
 
-Note: in the comands below, replace `9999` with the respective version number
+Depending on your level of paranoia, feel free to just wait for things to 
+fix themselves or go through the full checking process.
+
+1. Download the software from https://www.emtec.com/zoc/index.html
+2. Do not start it! 
+3. Instead verify the Code-Signing certificate (see below)
+4. If that checks out, you are 99.5% good
+5. In this repository look for the `*.README.txt` file that matches your
+  version number and follow the instructions to verify the SHA-2 value.
+6. If they check out also, you are 99.99% good
 
 &nbsp;
 
 ## Verify Code-Signing Certificate:
+
+A code-signing certificate is something akin to an SSL certificate, 
+but for software. It certifies that a given software was published by a 
+certain person (ask Google or your favorite AI how this works).
+
+To check the code-signing of a file that you downloaded:
+
 MacOS: `codesign -dvv zoc9999.dmg`
   
 Windows PowerShell: `Get-AuthenticodeSignature zoc9999_x64.exe | Format-List Signer*,Status*`
 
-&nbsp;
-
-## How to show your download's SHA-2:
-MacOS: `openssl dgst -sha256 <filename>`
-
-Windows PowerShell: `Get-FileHash -Algorithm SHA256 <filename>`
-
-&nbsp;
-
-## Reference SHA-2 values:
-Check the  [current repository](https://github.com/zocterminal/.well-known) 
-for `*.sha2` files matching the version number.
-
-&nbsp;
-
-## Signature for integrity checking of the SHA-2 values:
-Check the  [current repository](https://github.com/zocterminal/.well-known) 
-for `*.sha2.sig` files matching the version number.
-
-&nbsp;
-
-## The signature can be verified using the following public-key:
-[https://www.emtec.com/.well-known/sha2-public-key.pem](https://github.com/zocterminal/.well-known/blob/master/sha2-public-key.pem)
-
-&nbsp;
-
-# Procedure to verify the integrity of the list of SHA-2 values:
-    echo geting sha2-list, signature and public key
-    wget https://www.emtec.com/downloads/zoc/zoc9999.sha2
-    wget https://www.emtec.com/downloads/zoc/zoc9999.sha2.sig
-    wget https://raw.githubusercontent.com/zocterminal/.well-known/d7ffe91866e35744dc08f0e71a3a563b865f1244/sha2-public-key.pem
-    echo verifying sha2-list
-    openssl base64 -d -in zoc9999.sha2.sig -out zoc9999.sha2.bsig
-    openssl dgst -sha256 -verify sha2-public-key.pem -signature zoc9999.sha2.bsig zoc9999.sha2
-
-&nbsp;
-
-## Alternate commands for Windows PowerShell:
-`openssl dgst -sha256` --> `Get-FileHash -Algorithm SHA256 <filename>`
-  
-`wget`                 --> `Invoke-WebRequest <url> -OutFile <filename>`
+The message should say that the verificatin is okay, and you should see the name `Markus Schmidt` 
+as author or subject in the certificate chain.  The certification authority should be Sectigo (Windows) 
+or Apple (macOS).
 
 &nbsp;
