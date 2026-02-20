@@ -18,6 +18,9 @@ fix themselves or go through the full checking process.
   to verify the SHA-2 value of the download and of the `zoc*.sha2` file itself.
 7. If they all check out also, you are 99.999% good
 
+**Note:** These instructions are hosted outside of our website, in order to have an 
+independent source of information, in case of a breach of our website itself.
+
 &nbsp;
 
 ## Verify Code-Signing Certificate:
@@ -33,7 +36,7 @@ MacOS: `codesign -dvv zoc9999.dmg`
 Windows PowerShell: `Get-AuthenticodeSignature zoc9999_x64.exe | Format-List Signer*,Status*`
 
 The message should say that the verificatin is okay, and you should see the name `Markus Schmidt` 
-as author or subject in the certificate chain.  The certification authority should be Sectigo (Windows) 
-or Apple (macOS).
+as author or subject in the certificate chain.  The certification authority should be `Sectigo` (Windows) 
+or `Apple` (macOS).
 
 &nbsp;
