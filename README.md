@@ -15,7 +15,7 @@ fix themselves or go through the full checking process.
 4. If that checks out, you are 99.5% good
 5. In this repository (above) look for the `*.sha2.*` files that matches your
   version number, especially `zoc*.sha2.README.txt` and follow the instructions there
-  to verify the SHA-2 value of the download and the sha2-list itself.
+  to verify the SHA-2 value of the download and the zoc*.sha2 file itself.
 7. If they all check out also, you are 99.999% good
 
 &nbsp;
