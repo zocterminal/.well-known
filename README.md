@@ -46,8 +46,6 @@ for `*.sha2.sig` files matching the version number.
     openssl base64 -d -in zoc9999.sha2.sig -out zoc9999.sha2.bsig
     openssl dgst -sha256 -verify sha2-public-key.pem -signature zoc9999.sha2.bsig zoc9999.sha2
 
-See also: https://www.emtec.com/downloads/zoc/zoc9999.sha2.verify.sh
-
 &nbsp;
 
 ## Alternate commands for Windows PowerShell:
