@@ -18,8 +18,9 @@ fix themselves or go through the full checking process.
   to verify the SHA-2 value of the download and of the `zoc*.sha2` file itself.
 7. If they all check out also, you are 99.999% good
 
-**Note:** These instructions are hosted outside of our website, in order to have an 
-independent source of information, in case of a breach of our website itself.
+**Note:** These instructions are hosted here on github, in order to have a
+source of information that is independent of our website, in case of a breach
+of our website itself.
 
 &nbsp;
 
