@@ -13,9 +13,10 @@ fix themselves or go through the full checking process.
 2. Do not start it! 
 3. Instead verify the Code-Signing certificate (see below)
 4. If that checks out, you are 99.5% good
-5. In this repository look for the `*.README.txt` file that matches your
-  version number and follow the instructions to verify the SHA-2 value.
-6. If they check out also, you are 99.99% good
+5. In this repository (above) look for the `*.sha2.*` files that matches your
+  version number, especially `zoc*.sha2.README.txt` and follow the instructions there
+  to verify the SHA-2 value of the download and the sha2-list itself.
+7. If they all check out also, you are 99.999% good
 
 &nbsp;
 
