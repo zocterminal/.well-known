@@ -13,9 +13,10 @@ fix themselves or go through the full checking process.
 2. Do not start it! 
 3. Instead verify the Code-Signing certificate (see below)
 4. If that checks out, you are 99.5% good
-5. In this repository (above) look for the `*.sha2.*` files that matches your
-  version number, especially `zoc*.sha2.README.txt` and follow the instructions there
-  to verify the SHA-2 value of the download and of the `zoc*.sha2` file itself.
+5. In this repository (in the (sha2-files folder)[https://github.com/zocterminal/.well-known/tree/master/sha2-files])
+   look for the set of `*.sha2.*` files that matches the ZOC version number of the downloaded file, especially
+    `zoc*.sha2.README.txt`. Then follow the instructions and compare the SHA-2 value of the
+    download with the value found the `zoc*.sha2` file itself.
 7. If they all check out also, you are 99.999% good
 
 **Note:** These instructions are hosted here on github, in order to have a
