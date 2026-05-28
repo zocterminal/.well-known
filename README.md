@@ -1,4 +1,4 @@
-# VERIFYING AUTHENTICITY OF A ZOC TERMINAL DOWNLOAD ARCHIVE
+# VERIFYING THE AUTHENTICITY OF  ZOC TERMINAL DOWNLOAD ARCHIVES
 
 If an update-download in ZOC failed any you got redirected to here, please 
 understand that while the reason is most likely benign (like someone 
